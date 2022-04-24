@@ -62,7 +62,7 @@ const handleChange = (val) => {
 };
 </script>
 
-<style lang="less">
+<style lang="scss">
 #app_ClientSourceDownload {
   text-align: center;
 
