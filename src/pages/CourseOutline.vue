@@ -12,7 +12,7 @@ const src =
   "https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg";
 </script>
 
-<style lang="less">
+<style lang="scss">
 #app_course_outline {
   .block {
     padding: 30px 0;

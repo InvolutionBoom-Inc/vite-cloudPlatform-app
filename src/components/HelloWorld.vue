@@ -11,7 +11,7 @@ defineProps({
 
 const count = ref(0);
 </script>
-<style scoped>
+<style lang="scss" scoped>
 a {
   color: #42b983;
 }

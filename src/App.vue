@@ -27,9 +27,6 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
-import { useRoute, useRouter } from "vue-router";
-
 const activeIndex = ref("/");
 const handleSelect = (key, keyPath) => {
   console.log(key, keyPath);
@@ -43,7 +40,7 @@ onMounted(() => {
 });
 </script>
 
-<style lang="less">
+<style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
