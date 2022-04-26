@@ -1,9 +1,9 @@
 <template>
-  <div id="app_ClientSourceDownload">
+  <div id="app-client-source-download">
     <el-collapse
       v-model="activeNames"
       @change="handleChange"
-      class="el_collapse_box"
+      class="el-collapse-box"
     >
       <el-collapse-item title="4.24项目一需求说明.mp4" name="1">
         <div>
@@ -63,10 +63,10 @@ const handleChange = (val) => {
 </script>
 
 <style lang="scss">
-#app_ClientSourceDownload {
+#app-client-source-download {
   text-align: center;
 
-  .el_collapse_box {
+  .el-collapse-box {
     width: 60%;
     margin: auto;
   }

@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 //引入自动import依赖包
 import AutoImport from "unplugin-auto-import/vite";
-//引入自动import组件
+//引入自动import组件(组件名必须和文件名一致才能自动import，否则失败)
 import Components from "unplugin-vue-components/vite";
 //element解析器
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";

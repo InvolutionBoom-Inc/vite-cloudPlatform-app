@@ -1,5 +1,5 @@
 <template>
-  <div id="app_course_outline">
+  <div id="app-course-outline">
     <div class="block">
       <span class="demonstration">欢迎来到课程概要页</span>
       <el-image :src="src" />
@@ -13,7 +13,7 @@ const src =
 </script>
 
 <style lang="scss">
-#app_course_outline {
+#app-course-outline {
   .block {
     padding: 30px 0;
     text-align: center;
@@ -22,12 +22,14 @@ const src =
     box-sizing: border-box;
     vertical-align: top;
   }
+
   .demonstration {
     display: block;
     color: var(--el-text-color-secondary);
     font-size: 14px;
     margin-bottom: 20px;
   }
+
   .el-image {
     padding: 0 5px;
     max-width: 300px;
