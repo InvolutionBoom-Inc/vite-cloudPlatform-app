@@ -1,74 +1,56 @@
 <template>
   <div id="app-client-source-download">
-    <el-collapse
-      v-model="activeNames"
-      @change="handleChange"
-      class="el-collapse-box"
-    >
-      <el-collapse-item title="4.24项目一需求说明.mp4" name="1">
-        <div>
-          Consistent with real life: in line with the process and logic of real
-          life, and comply with languages and habits that the users are used to;
-        </div>
-        <div>
-          Consistent within interface: all elements should be consistent, such
-          as: design style, icons and texts, position of elements, etc.
-        </div>
-      </el-collapse-item>
-      <el-collapse-item title="3.22会议.mp4" name="2">
-        <div>
-          Operation feedback: enable the users to clearly perceive their
-          operations by style updates and interactive effects;
-        </div>
-        <div>
-          Visual feedback: reflect current state by updating or rearranging
-          elements of the page.
-        </div>
-      </el-collapse-item>
-      <el-collapse-item title="3月8日课堂会议" name="3">
-        <div>
-          Simplify the process: keep operating process simple and intuitive;
-        </div>
-        <div>
-          Definite and clear: enunciate your intentions clearly so that the
-          users can quickly understand and make decisions;
-        </div>
-        <div>
-          Easy to identify: the interface should be straightforward, which helps
-          the users to identify and frees them from memorizing and recalling.
-        </div>
-      </el-collapse-item>
-      <el-collapse-item title="3月15日课堂会议" name="4">
-        <div>
-          Decision making: giving advices about operations is acceptable, but do
-          not make decisions for the users;
-        </div>
-        <div>
-          Controlled consequences: users should be granted the freedom to
-          operate, including canceling, aborting or terminating current
-          operation.
-        </div>
-      </el-collapse-item>
-    </el-collapse>
+    <el-table :data="tableData" border id="file-list">
+      <el-table-column prop="fileName" label="文件名" width="180" />
+      <el-table-column prop="uploader" label="上传者" width="180" />
+      <el-table-column prop="uploadTime" label="上传时间" />
+      <el-table-column prop="download" label="下载" />
+    </el-table>
+    <TheFooter />
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
+import TheFooter from "../components/TheFooter.vue";
 
 const activeNames = ref(["1"]);
 const handleChange = (val) => {
   console.log(val);
 };
+
+const tableData = [
+  {
+    date: "2016-05-03",
+    name: "Tom",
+    address: "No. 189, Grove St, Los Angeles",
+  },
+  {
+    date: "2016-05-02",
+    name: "Tom",
+    address: "No. 189, Grove St, Los Angeles",
+  },
+  {
+    date: "2016-05-04",
+    name: "Tom",
+    address: "No. 189, Grove St, Los Angeles",
+  },
+  {
+    date: "2016-05-01",
+    name: "Tom",
+    address: "No. 189, Grove St, Los Angeles",
+  },
+];
 </script>
 
 <style lang="scss">
 #app-client-source-download {
   text-align: center;
 
-  .el-collapse-box {
-    width: 60%;
-    margin: auto;
+  #file-list {
+    width: 80%;
+    margin: 2% auto;
+    border-radius: 2%;
   }
 }
 </style>
