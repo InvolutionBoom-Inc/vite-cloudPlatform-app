@@ -1,6 +1,6 @@
 <template>
   <div id="header-nav">
-    <img src="../../assets/img/banner.jpeg" class="banner" />
+    <img :src="currentBanner" class="banner" />
     <div class="nav-box">
       <el-menu
         :default-active="activeIndex"
@@ -12,7 +12,7 @@
       >
         <el-menu-item index="Home">首页</el-menu-item>
         <el-menu-item index="CourseOutline">交流论坛</el-menu-item>
-        <el-menu-item index="CourseResources">课程资源</el-menu-item>
+        <el-menu-item index="ClientSourceDownload">课程资源</el-menu-item>
         <el-menu-item index="OnlineHomework">在线作业</el-menu-item>
         <!-- <el-menu-item index="4">在线作业</el-menu-item>
       <el-menu-item index="5">交流论坛</el-menu-item> -->
@@ -42,8 +42,10 @@ const router = useRouter();
 const route = useRoute();
 
 const activeIndex = ref("Home");
+const currentBanner = ref(`src/assets/img/banner_Home.jpg`);
 const handleSelect = (routerPath) => {
   router.push(`/${routerPath}`);
+  currentBanner.value = `src/assets/img/banner_${routerPath}.jpg`;
 };
 
 const inputNav = ref("");
