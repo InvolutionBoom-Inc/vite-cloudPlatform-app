@@ -3,7 +3,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - wuhonghao
+      - master
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest

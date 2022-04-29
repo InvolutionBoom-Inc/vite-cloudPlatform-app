@@ -14,8 +14,6 @@
         <el-menu-item index="CourseOutline">交流论坛</el-menu-item>
         <el-menu-item index="ClientSourceDownload">课程资源</el-menu-item>
         <el-menu-item index="OnlineHomework">在线作业</el-menu-item>
-        <!-- <el-menu-item index="4">在线作业</el-menu-item>
-      <el-menu-item index="5">交流论坛</el-menu-item> -->
       </el-menu>
       <el-input
         v-model="inputNav"
