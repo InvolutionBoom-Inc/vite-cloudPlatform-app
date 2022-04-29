@@ -7,7 +7,7 @@
             <div style="display: flex; align-items: center">
               <el-checkbox v-model="scope.row.done"></el-checkbox>
               <img
-                src="src/assets/img/folder.gif"
+                src="../assets/img/folder.gif"
                 style="width: 20px; height: 20px; margin-left: 5px"
               />
               <span style="margin-left: 10px">{{ scope.row.fileName }}</span>
@@ -20,7 +20,7 @@
           <template #default="scope">
             <div style="display: flex; align-items: center">
               <img
-                src="src/assets/img/download.png"
+                src="../assets/img/download.png"
                 style="width: 20px; height: 20px"
               />
             </div>

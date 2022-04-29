@@ -52,6 +52,7 @@
 
 <script setup>
 import { computed, ref } from "vue";
+import { getAssetsFile } from "../utils/pub-use.js";
 
 const activeNames = ref(["1"]);
 const handleChange = (val) => {
@@ -71,7 +72,8 @@ const homeworkList = [
     5、创建界面PersonPanel类，解决界面问题，处理事件，与用户互动
     具体类图设计如下：`,
     contentArr: [],
-    extraImg: "src/assets/img/hw1.png",
+    extraImgName: "hw1.png",
+    extraImg: "",
   },
   {
     title: "4.2 jdbc 实现登录注册（使用db类简化流程）",
@@ -83,6 +85,7 @@ const homeworkList = [
     3、创建Users类，包含login方法（该方法参数吗？返回什么？）、register(该方法需要一个UserInfo对象作为参数，这个参数包含需要注册的用户全部信息)
     4、创建测试类，实现登录和注册`,
     contentArr: [],
+    extraImgName: "",
     extraImg: "",
   },
   {
@@ -91,6 +94,7 @@ const homeworkList = [
     averagePoint: 92.9,
     content: `自选一个游戏开发 提交代码和效果截图`,
     contentArr: [],
+    extraImgName: "",
     extraImg: "",
   },
   {
@@ -99,7 +103,8 @@ const homeworkList = [
     averagePoint: 96.8,
     content: ``,
     contentArr: [],
-    extraImg: "src/assets/img/hw2.png",
+    extraImgName: "hw2.png",
+    extraImg: "",
   },
 ];
 
@@ -109,6 +114,9 @@ const steadyHomeworkList = computed({
     var re = /((\S.*?)\n)/g;
     if (homeworkList.length > 0) {
       homeworkList.forEach((item) => {
+        if (item.extraImgName != "") {
+          item.extraImg = getAssetsFile(item.extraImgName);
+        }
         var homeworkItem;
         var homeworkItemTotal = [];
         // 如果有符合正则的匹配项则遍历出来

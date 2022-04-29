@@ -28,9 +28,10 @@
 
 <script setup>
 //引入组合式api
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { Search } from "@element-plus/icons-vue";
+import { getAssetsFile } from "../../utils/pub-use.js";
 
 onMounted(() => {
   router.push(route.path);
@@ -40,10 +41,11 @@ const router = useRouter();
 const route = useRoute();
 
 const activeIndex = ref("Home");
-const currentBanner = ref(`src/assets/img/banner_Home.jpg`);
+const currentBanner = ref(getAssetsFile(`banner_${activeIndex.value}.jpg`));
 const handleSelect = (routerPath) => {
   router.push(`/${routerPath}`);
-  currentBanner.value = `src/assets/img/banner_${routerPath}.jpg`;
+
+  currentBanner.value = getAssetsFile(`banner_${routerPath}.jpg`);
 };
 
 const inputNav = ref("");

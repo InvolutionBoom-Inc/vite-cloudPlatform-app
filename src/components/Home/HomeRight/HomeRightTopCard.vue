@@ -1,6 +1,6 @@
 <template>
   <div id="right-small-box">
-    <img :src="getImageUrl(techerData.photo)" />
+    <img :src="getAssetsFile(techerData.photo)" />
     <div class="content">
       <p>{{ techerData.introduction[0] }}</p>
       <p v-if="techerData.name === '孟洁'" style="color: #ec1525">
@@ -13,13 +13,11 @@
 </template>
 
 <script setup>
+import { getAssetsFile } from "../../../utils/pub-use.js";
+
 const props = defineProps({
   techerData: Object,
 });
-
-const getImageUrl = (name) => {
-  return new URL(`../../../assets/img/${name}`, import.meta.url).href;
-};
 </script>
 
 <style lang="scss">

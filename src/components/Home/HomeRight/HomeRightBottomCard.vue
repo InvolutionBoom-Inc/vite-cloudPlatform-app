@@ -1,18 +1,16 @@
 <template>
   <div id="right-bottom-card">
-    <img :src="getImageUrl(srcName)" :alt="`${srcName}`" />
+    <img :src="getAssetsFile(srcName + '.jpg')" :alt="`${srcName}`" />
     <p><slot></slot></p>
   </div>
 </template>
 
 <script setup>
+import { getAssetsFile } from "../../../utils/pub-use.js";
+
 const props = defineProps({
   srcName: String,
 });
-
-const getImageUrl = (name) => {
-  return new URL(`../../../assets/img/${name}.jpg`, import.meta.url).href;
-};
 </script>
 
 <style lang="scss">

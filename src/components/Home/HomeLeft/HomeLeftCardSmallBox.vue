@@ -6,21 +6,18 @@
         <li v-if="cardData.son.length">{{ cardItem.title }}</li>
       </ul>
     </div>
-    <img :src="getImageUrl(cardData.img)" :alt="cardData.img" />
+    <img :src="getAssetsFile(cardData.img)" :alt="cardData.img" />
   </div>
   <hr />
 </template>
 
 <script setup>
 import { defineProps, ref } from "vue";
+import { getAssetsFile } from "../../../utils/pub-use.js";
 
 const props = defineProps({
   cardData: Object,
 });
-
-const getImageUrl = (name) => {
-  return new URL(`../../../assets/img/${name}`, import.meta.url).href;
-};
 </script>
 
 <style lang="scss">
