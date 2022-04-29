@@ -5,7 +5,7 @@
         <el-table-column prop="fileName" label="文件名" width="800">
           <template #default="scope">
             <div style="display: flex; align-items: center">
-              <el-checkbox></el-checkbox>
+              <el-checkbox v-model="scope.row.done"></el-checkbox>
               <img
                 src="src/assets/img/folder.gif"
                 style="width: 20px; height: 20px; margin-left: 5px"
@@ -29,7 +29,9 @@
       </el-table>
 
       <div style="text-align: left">
-        <el-checkbox>全选 <span style="color: red">批量下载</span></el-checkbox>
+        <el-checkbox v-model="selectAll"
+          >全选 <span style="color: red">批量下载</span></el-checkbox
+        >
       </div>
 
       <div id="page">
@@ -39,51 +41,68 @@
           :total="1"
           prev-text="首页&nbsp;&nbsp;&nbsp;&nbsp;上一页"
           next-text="下一页&nbsp;&nbsp;&nbsp;&nbsp;尾页"
+          background:true
         />
       </div>
     </div>
-
-    <TheFooter />
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
-import TheFooter from "../components/TheFooter.vue";
+import { computed, ref } from "vue";
 
 const activeNames = ref(["1"]);
 const handleChange = (val) => {
   console.log(val);
 };
 
-const tableData = [
+const tableData = ref([
   {
+    done: false,
     fileName: "1_学习任务一 技能节报名小程序",
     uploader: "孟洁",
     uploadTime: "2022-04-27",
   },
   {
+    done: false,
     fileName: "2_学习任务二 开发小游戏",
     uploader: "孟洁",
     uploadTime: "2022-04-27",
   },
   {
+    done: false,
     fileName: "3_学习任务三 开发天气预报小程序",
     uploader: "孟洁",
     uploadTime: "2022-04-27",
   },
   {
+    done: false,
     fileName: "4_学习任务四 开发通讯录管理系统",
     uploader: "孟洁",
     uploadTime: "2022-04-27",
   },
-];
+]);
+
+//实时计算被选中的项目
+let activeSelect = computed(
+  () => tableData.value.filter((v) => v.done == true).length
+);
+let all = computed(() => tableData.value.length);
+//全选按钮
+const selectAll = computed({
+  get: function () {
+    return activeSelect.value === all.value;
+  },
+  set: function (value) {
+    tableData.value.forEach((item) => {
+      item.done = value;
+    });
+  },
+});
 </script>
 
 <style lang="scss">
 #app-client-source-download {
-  text-align: center;
-
   #file-list {
     width: 80%;
     margin: 2% auto;
@@ -95,11 +114,18 @@ const tableData = [
 
     #e-table {
       font-size: medium;
+      .el-table__row {
+        height: 75px;
+      }
     }
 
     #page {
       display: flex;
       justify-content: center;
+      .el-pagination .is-active {
+        background-color: #ec1525;
+        border-radius: 20px;
+      }
     }
   }
 }

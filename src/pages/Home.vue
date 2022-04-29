@@ -5,7 +5,6 @@
       <HomeLeft />
       <HomeRight />
     </div>
-    <TheFooter />
   </div>
 </template>
 
@@ -14,7 +13,6 @@
 <style lang="scss">
 #app-home {
   width: 100%;
-  background-color: #f6f7fb;
   display: flex;
   flex-direction: column;
 
