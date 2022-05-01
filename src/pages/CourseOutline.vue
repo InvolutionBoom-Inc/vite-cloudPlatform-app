@@ -45,7 +45,7 @@
               <img :src="getAssetsFile(tip.img)" style="width: 100px;height: 100px;float: left">
               <div class="tip-text">
                 <span class="tip-name">姓名:{{tip.name}}</span>
-                <span class="tip-level">星级:<span>{{tip.level}}</span></span>
+                <span class="tip-level">星级:<span class="tip-level-text">{{tip.level}}</span></span>
                 <span v-if="tip.level == '发贴之星'">发帖数:{{tip.text}}</span>
                 <span v-else-if="tip.level == '回贴之星'">回帖数:{{tip.text}}</span>
                 <span v-else-if="tip.level == '解答之星'">解答数:{{tip.text}}</span>
@@ -168,152 +168,157 @@ import { getAssetsFile } from "../utils/pub-use.js";
     box-sizing: border-box;
     vertical-align: top;
     font-size: 14px;
-  }
-  .isclick{
-    margin-left: 15px;
-    float: left;
-    background-color: red;
-    color: white;
-  }
-  .noclick{
-    float: left;
-    background-color: #f6f7fb;
-    border: 0;
-    color: black;
-  }
-  .addclick{
-    background-color: rgb(229, 229, 229);
-    color: rgb(94, 94, 94);
-  }
-  #forum-list{
-    float: left;
-    display: block;
-    width: 67%;
-  }
-  .box-card-tip{
-    float: right;
-    margin-top: -21px;
-    margin-right: 20px;
-  }
-  .box-card{
-    margin-top: 20px;
-    border-radius: 30px;
-    padding-bottom: 35px;
-  }
-  .forumImg{
-    float: left;
-    margin: 5px 0 0 15px;
-    border-radius: 20px;
-  }
-  .title{
-    float: left;
-    margin-left: 20px;
-    margin-top: 10px;
-    font-size: 18px;
-    font-family: "等线";
-    font-weight: bold;
-  }
-  .content{
-    text-align: left;
-    float: left;
-    margin: 20px 20px 10px 20px;
-    padding-left: 20px;
-    width: 80%;
-    border-left: 3px solid rgb(229, 229, 229);
-    font-size: 14px;
-    font-family: "等线";
-    color: rgb(94, 94, 94);
-  }
-  .contentMain{
-    margin-top: 5px;
-    line-height: 24px;
-  }
-  .addreply{
-    float: left;
-    width: 80%;
-    margin: 20px 20px 20px 20px;
-  }
-  .bottom{
-    float: left;
-    display: inline;
-    margin-left: 60px;
-    line-height: 20px;
-    font-size: 14px;
-    color: rgb(158, 158, 158);
-  }
-  .bottom>span{
-    margin-right: 26px;
-  }
-  .bottom>span>img{
-    margin-bottom: -5px;
-  }
-  .time{
-    float: right;
-    margin-right: 10%;
-    margin-top: 4px;
-    font-size: 14px;
-    color: rgb(158, 158, 158);
-  }
-  .forum-tip{
-    float: right;
-    width: 30%;
-    margin-top: 20px;
-  }
-  .tip-card{
-    border-radius: 30px;
-  }
-  .tip-card-title{
-    margin: 10px 0 0 15px;
-    height: 55px;
-    text-align: left;
-  }
-  .tip-card-title>span{
-    font-family: "黑体";
-    // font-weight: bold;
-    font-size: 24px;
-    float: left;
-    margin: 10px 0 0 10px;
-  }
-  .tip-main{
-    margin: 20px auto;
-    width: 90%;
-    height: 100px;
-    border: 3px solid rgb(229, 229, 229);
-  }
-  .tip-text{
-    text-align: left;
-    float: left;
-    margin: 10px 0 0 15px;
-    width: 170px;
-    font-family: "等线";
-  }
-  .tip-text>span{
-    display: block;
-    float: left;
-    width: 95%;
-    margin: 10px 0 0 10px;
-  }
-  .tip-name{
-    font-weight: bold;
-  }
-  .tip-level>span{
-    color: red;
-  }
-  #page {
-    float: left;
-    width: 65%;
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    .number {
-      border-radius: 20px;
-      margin-right: 20px;
+    .button{
+      .isclick{
+        margin-left: 15px;
+        float: left;
+        background-color: red;
+        color: white;
+      }
+      .noclick{
+        float: left;
+        background-color: #f6f7fb;
+        border: 0;
+        color: black;
+      }
+      .addclick{
+        background-color: rgb(229, 229, 229);
+        color: rgb(94, 94, 94);
+      }
     }
-    .el-pagination .is-active {
-      background-color: #ec1525;
+    .main{
+      #forum-list{
+        float: left;
+        display: block;
+        width: 67%;
+        .box-card{
+          margin-top: 20px;
+          border-radius: 30px;
+          padding-bottom: 35px;
+          .box-card-tip{
+            float: right;
+            margin-top: -21px;
+            margin-right: 20px;
+          }
+          .forumImg{
+            float: left;
+            margin: 5px 0 0 15px;
+            border-radius: 20px;
+          }
+          .title{
+            float: left;
+            margin-left: 20px;
+            margin-top: 10px;
+            font-size: 18px;
+            font-family: "等线";
+            font-weight: bold;
+          }
+          .content{
+            text-align: left;
+            float: left;
+            margin: 20px 20px 10px 20px;
+            padding-left: 20px;
+            width: 80%;
+            border-left: 3px solid rgb(229, 229, 229);
+            font-size: 14px;
+            font-family: "等线";
+            color: rgb(94, 94, 94);
+            .contentMain{
+              margin-top: 5px;
+              line-height: 24px;
+            }
+          }
+          .addreply{
+            float: left;
+            width: 80%;
+            margin: 20px 20px 20px 20px;
+          }
+          .bottom{
+            float: left;
+            display: inline;
+            margin-left: 75px;
+            line-height: 20px;
+            font-size: 14px;
+            color: rgb(158, 158, 158);
+            >span{
+              margin-right: 26px;
+              >img{
+                margin-bottom: -5px;
+              }
+            }
+          }
+          .time{
+            float: right;
+            margin-right: 10%;
+            margin-top: 4px;
+            font-size: 14px;
+            color: rgb(158, 158, 158);
+          }
+        }
+      }
+      .forum-tip{
+        float: right;
+        width: 30%;
+        margin-top: 20px;
+        .tip-card{
+          border-radius: 30px;
+          .tip-card-title{
+            margin: 10px 0 0 15px;
+            height: 55px;
+            text-align: left;
+            >span{
+              font-family: "黑体";
+              font-size: 24px;
+              float: left;
+              margin: 10px 0 0 10px;
+            }
+          }
+          .tip-main{
+            margin: 20px auto;
+            width: 90%;
+            height: 100px;
+            border: 3px solid rgb(229, 229, 229);
+            .tip-text{
+              text-align: left;
+              float: left;
+              margin: 10px 0 0 15px;
+              width: 170px;
+              font-family: "等线";
+              >span{
+                display: block;
+                float: left;
+                width: 95%;
+                margin: 10px 0 0 10px;
+              }
+              .tip-name{
+                font-weight: bold;
+              }
+              .tip-level{
+                span{
+                  color: red;
+                }
+              }
+            }
+          }
+        }
+      }
     }
-    button{
-      margin-right: 20px;
+    #page {
+      float: left;
+      width: 65%;
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      .number {
+        border-radius: 20px;
+        margin-right: 20px;
+      }
+      .el-pagination .is-active {
+        background-color: #ec1525;
+      }
+      button{
+        margin-right: 20px;
+      }
     }
   }
 }
