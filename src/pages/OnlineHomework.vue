@@ -1,5 +1,16 @@
 <template>
   <div id="app-online-homework">
+    <el-menu
+      default-active="onlinehomework"
+      class="nav-el-menu-demo"
+      mode="horizontal"
+      @select="handleSelect"
+      active-text-color="#ec1525"
+      background-color="rgba(255,255,255,0)"
+    >
+      <el-menu-item index="onlinehomework">在线作业</el-menu-item>
+    </el-menu>
+
     <div id="homework-list">
       <el-card
         class="box-card"
@@ -19,10 +30,7 @@
           {{ item }}
         </p>
         <p class="extra-image" v-if="homeworkItem.extraImg !== ''">
-          <img
-            :src="homeworkItem.extraImg"
-            style="width: 1000px; height: 600px"
-          />
+          <img :src="homeworkItem.extraImg" />
         </p>
         <p class="submit-homework">
           <el-button
@@ -132,16 +140,32 @@ const steadyHomeworkList = computed({
 </script>
 
 <style lang="scss">
-#app-online-homework {
+@media screen and(max-width:1420px) {
+  img {
+    width: 40%;
+  }
+}
+
+@media screen and(min-width:1420px) {
+  .nav-el-menu-demo {
+    display: none;
+  }
+
   #homework-list {
-    width: 80%;
     margin: 2% auto;
     border-radius: 20px 20px;
     padding: 1%;
     background: white;
     box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2),
       0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
 
+  #homework-list {
+    width: 80%;
+  }
+}
+#app-online-homework {
+  #homework-list {
     .box-card {
       text-align: left;
       border: none;
@@ -167,6 +191,7 @@ const steadyHomeworkList = computed({
   #page {
     display: flex;
     justify-content: center;
+    margin: auto;
     .number {
       border-radius: 20px;
     }

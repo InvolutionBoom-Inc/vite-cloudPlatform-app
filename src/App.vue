@@ -14,7 +14,7 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  width: 1420px;
+  width: 100%;
   margin: auto;
   font-family: "等线";
   background-color: #f6f7fb;

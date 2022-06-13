@@ -21,13 +21,26 @@ const props = defineProps({
 </script>
 
 <style lang="scss">
-#Left-small-box {
-  width: 85%;
-  margin: 20px auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+@media screen and (max-width: 1420px) {
+  #Left-small-box {
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 
+@media screen and (min-width: 1420px) {
+  #Left-small-box {
+    width: 85%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+#Left-small-box {
   .left {
     text-align: left;
     width: 60%;

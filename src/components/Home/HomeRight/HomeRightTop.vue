@@ -42,55 +42,60 @@ const techerData = [
 </script>
 
 <style lang="scss">
-#home-right-top {
-  width: 100%;
+@media screen and (max-width: 1420px) {
+}
 
-  .box-card {
-    margin-bottom: 10px;
-    border-radius: 20px;
+@media screen and (min-width: 1420px) {
+  #home-right-top {
+    height: 80vh;
 
-    .card-header {
-      display: flex;
-      justify-content: start;
-      align-items: end;
-      font-family: "黑体";
-      font-size: 20px;
+    .box-card {
+      margin-bottom: 10px;
+      border-radius: 20px;
 
-      .icon {
-        width: 30px;
-        height: 30px;
-        margin-right: 10px;
+      .card-header {
+        display: flex;
+        justify-content: start;
+        align-items: end;
+        font-family: "黑体";
+        font-size: 20px;
+
+        .icon {
+          width: 30px;
+          height: 30px;
+          margin-right: 10px;
+        }
       }
-    }
 
-    .el-card__header {
-      border-bottom: none;
-    }
+      .el-card__header {
+        border-bottom: none;
+      }
 
-    .text {
-      font-size: 14px;
-    }
+      .text {
+        font-size: 14px;
+      }
 
-    .item {
-      margin-bottom: 18px;
-    }
+      .item {
+        margin-bottom: 18px;
+      }
 
-    .card-main {
-      display: flex;
-      width: 100%;
-      justify-content: space-around;
-      flex-direction: column;
-      position: relative;
-      top: -20px;
+      .card-main {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        flex-direction: column;
+        position: relative;
+        top: -20px;
 
-      .main-content {
-        width: 60%;
-        text-align: justify;
-        line-height: 30px;
+        .main-content {
+          width: 60%;
+          text-align: justify;
+          line-height: 30px;
 
-        p {
-          text-indent: 20px;
-          font-family: "等线";
+          p {
+            text-indent: 20px;
+            font-family: "等线";
+          }
         }
       }
     }

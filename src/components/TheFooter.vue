@@ -10,14 +10,23 @@
 <script setup></script>
 
 <style lang="scss">
-#app-the-footer {
-  width: 100%;
-  background-color: #ec1525;
-  height: 50px;
-  color: white;
-  font-family: "等线";
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+@media screen and (max-width: 1420px) {
+  #app-the-footer {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1420px) {
+  #app-the-footer {
+    margin-top: 50px;
+    width: 100%;
+    background-color: #ec1525;
+    height: 50px;
+    color: white;
+    font-family: "等线";
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 </style>

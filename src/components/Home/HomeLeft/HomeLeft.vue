@@ -1,6 +1,26 @@
 <template>
-  <div id="home-left">
+  <div id="home-left-web">
     <el-card class="box-card">
+      <template #header>
+        <div class="card-header">
+          <img
+            src="../../../assets/img/书.png"
+            alt="授课教师icon"
+            class="icon"
+          />
+          <span>课程内容</span>
+        </div>
+      </template>
+      <div class="card-main">
+        <div v-for="(card, index) in cardData" :key="index">
+          <HomeLeftCardSmallBox :cardData="card" />
+        </div>
+      </div>
+    </el-card>
+  </div>
+
+  <div id="home-left-mobile">
+    <el-card class="box-card" shadow="never">
       <template #header>
         <div class="card-header">
           <img
@@ -66,12 +86,77 @@ const cardData = [
 </script>
 
 <style lang="scss">
-#home-left {
-  width: 65%;
+@media screen and (min-width: 1420px) {
+  #home-left-web {
+    width: 65%;
 
-  .box-card {
-    margin-bottom: 10px;
-    border-radius: 20px;
+    .box-card {
+      margin-bottom: 10px;
+      border-radius: 20px;
+
+      .card-header {
+        display: flex;
+        justify-content: start;
+        align-items: end;
+        font-family: "黑体";
+        font-size: 20px;
+
+        .icon {
+          width: 30px;
+          height: 30px;
+          margin-right: 10px;
+        }
+      }
+
+      .el-card__header {
+        border-bottom: none;
+      }
+
+      .text {
+        font-size: 14px;
+      }
+
+      .item {
+        margin-bottom: 18px;
+      }
+
+      .card-main {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        flex-direction: column;
+        border-top: 1px solid rgb(111, 111, 111, 0.5);
+        position: relative;
+        top: -30px;
+
+        img {
+          width: 30%;
+        }
+      }
+    }
+  }
+
+  #home-left-mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1420px) {
+  #home-left-web {
+    display: none;
+  }
+
+  #home-left-mobile {
+    margin-bottom: 50px;
+    height: 100vh;
+
+    .el-card {
+      background-color: transparent;
+    }
+
+    .el-card__header {
+      display: none;
+    }
 
     .card-header {
       display: flex;
@@ -84,32 +169,6 @@ const cardData = [
         width: 30px;
         height: 30px;
         margin-right: 10px;
-      }
-    }
-
-    .el-card__header {
-      border-bottom: none;
-    }
-
-    .text {
-      font-size: 14px;
-    }
-
-    .item {
-      margin-bottom: 18px;
-    }
-
-    .card-main {
-      display: flex;
-      width: 100%;
-      justify-content: space-around;
-      flex-direction: column;
-      border-top: 1px solid rgb(111, 111, 111, 0.5);
-      position: relative;
-      top: -30px;
-
-      img {
-        width: 30%;
       }
     }
   }

@@ -1,5 +1,8 @@
 <template>
-  <div id="app-the-header"><TheHeaderToBar /> <TheHeaderNav /></div>
+  <div id="app-the-header">
+    <TheHeaderToBar />
+    <TheHeaderNav />
+  </div>
 </template>
 
 <script setup></script>

@@ -1,5 +1,16 @@
 <template>
   <div id="app-client-source-download">
+    <el-menu
+      default-active="sourcedownload"
+      class="nav-el-menu-demo"
+      mode="horizontal"
+      @select="handleSelect"
+      active-text-color="#ec1525"
+      background-color="rgba(255,255,255,0)"
+    >
+      <el-menu-item index="sourcedownload">资源下载</el-menu-item>
+    </el-menu>
+
     <div id="file-list">
       <el-table :data="tableData" id="e-table">
         <el-table-column prop="fileName" label="文件名" width="800">
@@ -102,10 +113,20 @@ const selectAll = computed({
 </script>
 
 <style lang="scss">
+@media screen and (max-width: 1420px) {
+}
+
+@media screen and (min-width: 1420px) {
+  .nav-el-menu-demo {
+    display: none;
+  }
+}
+
 #app-client-source-download {
+  min-height: 700px;
   #file-list {
     width: 80%;
-    margin: 2% auto;
+    margin: 50px auto;
     border-radius: 20px 20px;
     padding: 2%;
     background: white;
@@ -122,6 +143,7 @@ const selectAll = computed({
     #page {
       display: flex;
       justify-content: center;
+      margin: auto;
       .el-pagination .is-active {
         background-color: #ec1525;
         border-radius: 20px;
