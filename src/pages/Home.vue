@@ -62,7 +62,7 @@ const handleSelect = (e) => {
   }
 
   #app-home-mobile {
-    font-size: 1.2rem;
+    font-size: 1rem;
     width: 100%;
     display: flex;
     flex-direction: column;

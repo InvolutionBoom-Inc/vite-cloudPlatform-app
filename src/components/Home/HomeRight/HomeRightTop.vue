@@ -47,8 +47,6 @@ const techerData = [
 
 @media screen and (min-width: 1420px) {
   #home-right-top {
-    height: 80vh;
-
     .box-card {
       margin-bottom: 10px;
       border-radius: 20px;

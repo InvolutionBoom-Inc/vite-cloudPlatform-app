@@ -140,7 +140,6 @@ const changeNav = (e) => {
   }
 
   activeIndex.value = pathName;
-  console.log(activeIndex.value);
   router.push(`/${pathName}`);
 };
 </script>

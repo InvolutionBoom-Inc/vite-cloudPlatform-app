@@ -320,7 +320,7 @@ const tipList = [
 }
 
 #app-course-outline {
-  margin-bottom: 50px;
+  padding-bottom: 50px;
   .block {
     padding: 30px 0;
     text-align: center;

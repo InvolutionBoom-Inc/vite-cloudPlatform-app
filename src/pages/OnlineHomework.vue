@@ -45,12 +45,13 @@
         <hr />
       </el-card>
     </div>
+
     <div id="page">
       <el-pagination
         background
         layout="prev, pager, next"
         :page-size="4"
-        :total="12"
+        :total="8"
         prev-text="首页&nbsp;&nbsp;&nbsp;&nbsp;上一页"
         next-text="下一页&nbsp;&nbsp;&nbsp;&nbsp;尾页"
       />
@@ -144,6 +145,18 @@ const steadyHomeworkList = computed({
   img {
     width: 40%;
   }
+
+  #page {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    .number {
+      border-radius: 20px;
+    }
+    .el-pagination .is-active {
+      background-color: #ec1525;
+    }
+  }
 }
 
 @media screen and(min-width:1420px) {
@@ -152,6 +165,7 @@ const steadyHomeworkList = computed({
   }
 
   #homework-list {
+    width: 80%;
     margin: 2% auto;
     border-radius: 20px 20px;
     padding: 1%;
@@ -160,11 +174,21 @@ const steadyHomeworkList = computed({
       0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
-  #homework-list {
-    width: 80%;
+  #page {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    .number {
+      border-radius: 20px;
+    }
+    .el-pagination .is-active {
+      background-color: #ec1525;
+    }
   }
 }
+
 #app-online-homework {
+  padding-bottom: 65px;
   #homework-list {
     .box-card {
       text-align: left;
@@ -185,18 +209,6 @@ const steadyHomeworkList = computed({
     .submit-homework {
       display: flex;
       justify-content: right;
-    }
-  }
-
-  #page {
-    display: flex;
-    justify-content: center;
-    margin: auto;
-    .number {
-      border-radius: 20px;
-    }
-    .el-pagination .is-active {
-      background-color: #ec1525;
     }
   }
 }
